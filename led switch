@@ -1,0 +1,28 @@
+int led = 13;
+
+
+
+void setup() {
+Serial.begin(19200);
+pinMode(A0,INPUT);
+pinMode(led,OUTPUT);
+}
+
+void loop() {
+int va;
+char c;
+
+
+va = analogRead(A0);
+c= Serial.read();
+
+if(c=='1'){
+  Serial.println("Turning the LED on");
+  digitalWrite(led, HIGH);
+}
+
+if(c='2'){
+  Serial.println("Turning the LED off");
+  digitalWrite(led, LOW);
+}
+}
